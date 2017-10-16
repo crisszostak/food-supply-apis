@@ -10,7 +10,7 @@ class UserController extends BaseController {
     }
 
     async auth(req, res, next){
-        const { login, password } = req.params;
+        const { login, password } = req.body;
 
         const user = await this._userRepository.matchUserByLoginAndPassword(login, password);
         const container = ContainerProvider.getContainer();

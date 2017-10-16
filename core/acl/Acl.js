@@ -7,8 +7,6 @@ class Acl {
         const role = routeManager.getRoute(req.method.toLowerCase(), req.route.path).acl;
         const sessionManager = ContainerProvider.getContainer().get('session_manager');
 
-        console.log("XD");
-
         if(role === 'guest') next();
         else {
             const sid = req.headers.sid || '';

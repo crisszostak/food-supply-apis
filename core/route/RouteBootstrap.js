@@ -22,8 +22,6 @@ class RouteBootstrap extends BootstrapInterface {
 
         const routeManager = new RouteManager(RouteBootstrap.routeMap);
         container.set('route_manager', routeManager);
-
-        console.log(RouteBootstrap.routeMap);
     }
 
     static createRoute(method, parent, route){

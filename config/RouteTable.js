@@ -5,16 +5,6 @@ const FoodController = ControllerFactory.createController('food');
 const RouteTable = {
   "get": [
       {
-          path: "/user/auth",
-          acl: 'guest',
-          actions: [
-              UserController.auth.bind(UserController)
-          ],
-          args: [
-              "login", "password"
-          ]
-      },
-      {
           path: "/food/all",
           acl: 'guest',
           actions: [
@@ -33,7 +23,17 @@ const RouteTable = {
           args: [
               "login","password"
           ]
-      }
+      },
+      {
+          path: "/user/auth",
+          acl: 'guest',
+          actions: [
+              UserController.auth.bind(UserController)
+          ],
+          args: [
+              "login", "password"
+          ]
+      },
   ],
   "put": [
 

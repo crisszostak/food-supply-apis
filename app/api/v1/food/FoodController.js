@@ -8,8 +8,7 @@ class FoodController extends BaseController {
         this._foodRepository = foodRepository;
     }
     async getFoodsAll(req, res, next){
-        const foodRepository = ContainerProvider.getContainer().get('food_repository');
-        res.json(await foodRepository.getAllFoods());
+        res.json(await this._foodRepository.getAllFoods());
         next();
     }
 }
